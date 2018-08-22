@@ -22,9 +22,7 @@ int main(){
 	if(ns==IDCANCEL)
 		exit(0);
 loop:	D=0, D1=0, I=0, J=0;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED|FOREGROUND_GREEN|FOREGROUND_BLUE);
 	cout<<"请输入矩阵\"A\"的阶数(行数=列数): ";
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN|FOREGROUND_BLUE);
 	cin>>N;
 	cin.clear();
 	cin.sync();
@@ -55,9 +53,8 @@ loop:	D=0, D1=0, I=0, J=0;
 				e[i][j]=0;
 		}
 	for(i=0;i<M;i++){
-loop1:		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN);
+loop1:	
 		cout<<"请输入矩阵A的第"<<i+1<<"行 : ";
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE|FOREGROUND_GREEN);
 		cin.clear();
 		cin.sync();
 		for(j=0;j<M;j++){
@@ -272,16 +269,14 @@ loopd:	switch(M){
 		a[i][I]=e[i][J];
 	}
 	goto loopd;	
-lpend:	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED|FOREGROUND_GREEN);
+lpend:	
 	cout<<endl<<"计算结果 A的逆矩阵:"<<endl;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE|FOREGROUND_GREEN);  
 	for(i=0;i<M;i++){
 		for(j=0;j<M;j++)
 			cout<<setw(6)<<njz[i][j]<<" ; ";
 		cout<<endl;
 	}
 	cout<<endl;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN|FOREGROUND_BLUE|FOREGROUND_RED);
 	MessageBox(NULL,TEXT("如果计算结果有误，或者需要输出更多结果，或者需要Linux等其他平台的本应用，或者对作者有所建议，您可以加qq群 \"128440097\" 向管理员反馈。"),TEXT("计算完成!"),MB_ICONASTERISK);
 	int ns9=MessageBox(NULL,TEXT("是否继续计算？"),TEXT("THEN"),MB_OKCANCEL);
 	if(ns9==IDCANCEL)

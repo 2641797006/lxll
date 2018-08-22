@@ -7,97 +7,71 @@ double jzxc(double *a[],double *b[],double *s[]);
 int main(){
 	int I0, J0, M0, N0;
 	long double I1, J1, M1, N1;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN|FOREGROUND_BLUE|FOREGROUND_RED);
 	cout<<"Welcome to use \"矩阵相乘";
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);
 	cout<<"2.0";
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN|FOREGROUND_BLUE|FOREGROUND_RED);
 	cout<<"版\"."<<endl;
-loop:	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN);
+loop:	
 	cout<<"请输入矩阵\'A\'的行数 : ";
 	cin.clear();
 	cin.sync();
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE|FOREGROUND_GREEN);
 	cin>>I1;
 	I0=int(I1);
 	if(!cin||I0!=I1||I0<1){
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);
 		cout<<"输入了非正整数字符，或者输入的数字过大！"<<endl;
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE);
 		cout<<"请重新输入AB行列数！"<<endl;
 		goto loop;
 	}
 	else if(I0>9){
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);
 		cout<<"抱歉，为了用户输入方便，作者将矩阵最高行列数限制为\"9\"阶，"<<endl
 		    <<"如需解除限制，您可以加qq群 \"128440097\" 向管理员索取可执行文件。"<<endl;
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE);
 		cout<<"请重新输入AB行列数！"<<endl;
 		goto loop;
 	} 
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN);
 	cout<<"请输入矩阵\'A\'的列数 : ";
 	cin.clear();
 	cin.sync();
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE|FOREGROUND_GREEN);
 	cin>>J1;
 	J0=int(J1);
 	if(!cin||J0!=J1||J0<1){
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);
 		cout<<"输入了非正整数字符，或者输入的数字过大！"<<endl;
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE);
 		cout<<"请重新输入AB行列数！"<<endl;
 		goto loop;
 	}
 	else if(J0>9){
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);
 		cout<<"抱歉，为了用户输入方便，作者将矩阵最高行列数限制为\"9\"阶，"<<endl
 		    <<"如需解除限制，您可以加qq群 \"128440097\" 向管理员索取可执行文件。"<<endl;
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE);
 		cout<<"请重新输入AB行列数！"<<endl;
 		goto loop;
 	} 
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN);
 	cout<<"请输入矩阵\'B\'的行数 : ";
 	cin.clear();
 	cin.sync();
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE|FOREGROUND_GREEN);
 	cin>>M1;
 	M0=int(M1);
 	if(!cin||M0!=M1||M0<1){
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);
 		cout<<"输入了非正整数字符，或者输入的数字过大！"<<endl;
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE);
 		cout<<"请重新输入AB行列数！"<<endl;
 		goto loop;
 	}
 	else if(M0>9){
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);
 		cout<<"抱歉，为了用户输入方便，作者将矩阵最高行列数限制为\"9\"阶，"<<endl
 		    <<"如需解除限制，您可以加qq群 \"128440097\" 向管理员索取可执行文件。"<<endl;
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE);
 		cout<<"请重新输入AB行列数！"<<endl;
 		goto loop;
 	} 
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN);
 	cout<<"请输入矩阵\'B\'的列数 : ";
 	cin.clear();
 	cin.sync();
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE|FOREGROUND_GREEN);
 	cin>>N1;
 	N0=int(N1);
 	if(!cin||N0!=N1||N0<1){
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);
 		cout<<"输入了非正整数字符，或者输入的数字过大！"<<endl;
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE);
 		cout<<"请重新输入AB行列数！"<<endl;
 		goto loop;
 	}
 	else if(N0>9){
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);
 		cout<<"抱歉，为了用户输入方便，作者将矩阵最高行列数限制为\"9\"阶，"<<endl
 		    <<"如需解除限制，您可以加qq群 \"128440097\" 向管理员索取可执行文件。"<<endl;
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE);
 		cout<<"请重新输入AB行列数！"<<endl;
 		goto loop;
 	} 
@@ -106,43 +80,36 @@ loop:	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSI
 	else if(N0==I0){
 		M=M0; S=N0; N=J0;	}
 	else{
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);
 		cout<<"矩阵A和B不能相乘 !"<<endl
 		    <<"请重新输入 !"<<endl;
 		goto loop;
 	}	
 	double a[I0][J0], b[M0][N0], s[M][N]; int i, j;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN);
 	long double ij;
 	cout<<"请输入矩阵\'A\'. "<<endl;
 	for(i=0;i<I0;i++){
-loop1:		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN);
+loop1:	
 		cout<<"请输入矩阵\'A\'的第"<<i+1<<"行 : ";
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE|FOREGROUND_GREEN);
 		cin.clear();
 		cin.sync();
 		for(j=0;j<J0;j++){
 			cin>>a[i][j];
 		}
 		if(!cin){
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);
 		cout<<"输入了其他字符 或者输入的数字过大！请重新输入该行！"<<endl;
 		goto loop1;
 		}
 	}
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN);
 	cout<<"请输入矩阵\'B\'. "<<endl;
 	for(i=0;i<M0;i++){
-loop2:		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN);
+loop2:	
 		cout<<"请输入矩阵\'B\'的第"<<i+1<<"行 : ";
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE|FOREGROUND_GREEN);
 		cin.clear();
 		cin.sync();
 		for(j=0;j<N0;j++){ 
 			cin>>b[i][j];
 		} 
 		if(!cin){
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);
 		cout<<"输入了其他字符 或者输入的数字过大！请重新输入该行！"<<endl;
 		goto loop2;
 		}
@@ -158,22 +125,17 @@ loop2:		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTEN
 		jzxc(pa,pb,ps);
 	else if(N0==I0)
 		jzxc(pb,pa,ps);
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED|FOREGROUND_GREEN);
 	cout<<endl<<"计算结果 ——矩阵 C = AB 等于 : "<<endl;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE|FOREGROUND_GREEN);
 	for(i=0;i<M;i++){
 		for(j=0;j<N;j++)
 			cout<<setw(6)<<s[i][j]<<" ; ";
 		cout<<endl;
 	}
 	cout<<endl;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN|FOREGROUND_BLUE|FOREGROUND_RED);
 	cout<<"如果计算结果有误，或者需要输出更多结果，或者需要Linux等其他平台的本应用，或者对作者有所建议，"<<endl
 	    <<"您可以加qq群 \"128440097\" 向管理员反馈。"<<endl
-	    <<"下面您可以继续计算 或者 按\"";
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);			
+	    <<"下面您可以继续计算 或者 按\"";		
 	cout<<"Ctrl+C";
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN|FOREGROUND_BLUE|FOREGROUND_RED);
 	cout<<"\"退出程序。"<<endl;
 	cin.clear();
 	cin.sync();

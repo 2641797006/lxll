@@ -17,16 +17,11 @@ double x07(double* (*p)[7]);
 double axb(double* p,double* a[]);
 int main(){
 	long double N;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN|FOREGROUND_BLUE|FOREGROUND_RED);
 	cout<<"Welcome to use \"行列式计算";
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);
 	cout<<"2.0";
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN|FOREGROUND_BLUE|FOREGROUND_RED);
 	cout<<"版\"."<<endl;
 loop:	D=0;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN);
 	cout<<"请输入行列阵阶数 : ";
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE|FOREGROUND_GREEN);
 	cin>>N;
 	cin.clear();
 	cin.sync();
@@ -37,18 +32,15 @@ loop:	D=0;
 		goto loop; 
 	}
 	if(M==1){
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED|FOREGROUND_BLUE);
 		cout<<"亲，您在逗我吗？请重新输入！"<<endl;
 		goto loop;
 	}
 	else if(M==2){
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);
 		cout<<"二阶行列阵您可以使用计算器计算"<<endl
 		    <<"或者 加qq群 \"128440097\" 向管理员索取可执行文件。"<<endl;
 		goto loop;
 	}
 	else if(M>7){
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);
 		cout<<"抱歉，为了用户输入方便，作者将行列阵最高阶数限制为\"7\"阶，"<<endl
 		    <<"如需解除限制，您可以加qq群 \"128440097\" 向管理员索取可执行文件。"<<endl;
 		goto loop;
@@ -56,15 +48,13 @@ loop:	D=0;
 	JC=jc(M);
 	double a[M][M], xbz[M][2], k1; int i, j, k, l, i1;
 	for(i=0;i<M;i++){
-loop1:		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN);
+loop1:	
 		cout<<"请输入行列式的第"<<i+1<<"行 : ";
 		cin.clear();
 		cin.sync();
 		for(j=0;j<M;j++){
-			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE|FOREGROUND_GREEN);
 			cin>>a[i][j];
 			if(!cin){
-				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);
 				cout<<"输入了其他字符！"<<endl
 				    <<"请重新输入该行！"<<endl;
 				cin.clear();
@@ -241,16 +231,12 @@ loop1:		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTEN
 				k1=1;
 			}
 		 	break;
-	}
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_BLUE|FOREGROUND_GREEN);			
+	}	
 	cout<<endl<<"计算结果：D = "<<D<<endl<<endl;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN|FOREGROUND_BLUE|FOREGROUND_RED);
 	cout<<"如果计算结果有误，或者需要输出更多结果，或者需要Linux等其他平台的本应用，或者对作者有所建议，"<<endl
 	    <<"您可以加qq群 \"128440097\" 向管理员反馈。"<<endl
-	    <<"下面您可以继续计算 或者 按\"";
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_RED);			
+	    <<"下面您可以继续计算 或者 按\"";	
 	cout<<"Ctrl+C";
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY|FOREGROUND_GREEN|FOREGROUND_BLUE|FOREGROUND_RED);
 	cout<<"\"退出程序。"<<endl;
 	cin.clear();
 	cin.sync();
